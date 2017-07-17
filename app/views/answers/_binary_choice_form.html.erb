@@ -1,0 +1,26 @@
+<%= bootstrap_form_for [@question, @answer], remote: true, :url => topic_question_answers_path, :html => {:id => 'binary-choice-form'} do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row" style="display: none">
+    <%= f.text_field :value %>
+  </div>
+
+    <div class="col-md-6">
+      <%= f.submit 'True', remote: true, class: 'btn btn-success btn-fill btn-wd btn-block vote-btn' %>
+    </div>
+    <div class="col-md-6">
+      <%= f.submit 'False', remote: true, class: 'btn btn-danger btn-fill btn-wd btn-block vote-btn' %>
+    </div>
+
+
+<% end %>

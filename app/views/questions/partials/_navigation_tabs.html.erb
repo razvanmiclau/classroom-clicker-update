@@ -1,0 +1,27 @@
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active">
+    <%= link_to "#tab-questions", data: { toggle: "tab" } do %>
+      <span class="glyphicon glyphicon-th-list"></span>
+      Cards View
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "#tab-replies", data: { toggle: "tab" } do %>
+      <span class="glyphicon glyphicon-list-alt"></span>
+      Word Cloud
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "#tab-stats", data: { toggle: "tab" } do %>
+      <span class="glyphicon glyphicon-stats"></span>
+      Bar Chart
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "#tab-pie", data: { toggle: "tab" } do %>
+      <span class="glyphicon glyphicon-pie"></span>
+      Pie Chart
+    <% end %>
+  </li>
+</ul>

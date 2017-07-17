@@ -1,0 +1,24 @@
+<div class="row">
+  <% if @answers.any? %>
+    <div id="lect-answers">
+      <% @answers.each do |answer| %>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="content">
+              <h3><%= answer.value %></h3>
+              <div class="footer">
+                <hr>
+                <div class="stats"><%= time_ago_in_words(answer.created_at) %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="col-sm-12">
+      <h3 class="text-center">Your audience hasn't voted yet.</h3>
+      <p class="category text-center">Please share the URL to your students </p>
+    </div>
+  <% end %>
+</div>

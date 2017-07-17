@@ -1,0 +1,20 @@
+<%= bootstrap_form_for [@question, @answer], remote: true, :url => topic_question_answers_path do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-md-8">
+    <%= f.text_field :value, skip_label: true, placeholder: 'Please type your answer here...', :class => "required student_input", :autofocus => true %>
+  </div>
+  <div class="col-md-4">
+    <%= f.submit "Submit", class: "btn btn-primary btn-fill btn-wd vote-btn" %>
+  </div>
+<% end %>

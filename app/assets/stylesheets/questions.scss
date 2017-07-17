@@ -1,0 +1,20 @@
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+.panel {
+ display: inline-block;
+ margin:  .5em;
+ padding:  0;
+ width:98%;
+ border:none;
+ box-shadow: none;
+}
+
+.panel-body{
+  border-radius: .2em;
+  padding: .5em .7em .7em;
+  background: #f6f6f6;
+  margin: 10px;
+  font-size: 2.6em;
+  box-shadow: #aaa 0 1px 4px;
+  text-align: center;
+}

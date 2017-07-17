@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="header">
+        <h4 class="title">Classrooms <span class="badge"><%= @topics_count %></span></h4><br>
+        <p class="category">
+          <%= link_to "New Classroom", new_topic_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#classroom-modal', :class => 'btn btn-xs btn-simple btn-primary'}%>
+        </p>
+        <!-- <%= link_to "New Classroom", new_topic_path, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#classroom-modal', :class => 'btn btn-xs btn-primary'}%> -->
+        <!--<%= link_to 'New Classroom', new_topic_path, remote: true, class: 'btn btn-xs btn-primary' %>-->
+      </div>
+
+        <% if @topics.any? %>
+          <div class="content table-responsive table-full-width">
+            <%= render 'topics/partials/table' %>
+          </div>
+        <% else %>
+          <div class="content">
+            <h4>Why don't you add a new topic?</h4>
+          </div>
+        <% end %>
+    </div><!-- end card -->
+  </div><!-- end col-md-12 -->
+</div><!-- end row -->
+
+<!-- Modal box is on the application.html.erb layout -->

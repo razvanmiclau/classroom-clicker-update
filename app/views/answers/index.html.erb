@@ -1,0 +1,36 @@
+<div id="answers-panel">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="header">
+        <h1 class="title text-center"><%= @question.title %></h1>
+        <% if @answers.any? %>
+          <p class="category text-center">You are the <%= @question.impressionist_count%>th visitor</p>
+        <% else %>
+          <p class="category text-center">Be the first student who answers this question!</p>
+        <% end %>
+        <br>
+        <%= render "form_container" %>
+
+      </div>
+      <div class="content answers-content">
+
+        <div class="table-full-width">
+          <table class="table">
+            <tbody id="answers">
+              <%= render 'answer' %>
+            </tbody>
+          </table>
+        </div>
+        <% if @answers.any? %>
+          <div class="footer">
+            <hr>
+            <div class="stats">
+              <i class="glyphicon glyphicon-time"></i>
+              Updated <%= time_ago_in_words(@answers.first.created_at) %> ago
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

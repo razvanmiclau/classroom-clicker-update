@@ -1,0 +1,61 @@
+<div class="tab-content">
+
+<!-- CARDS -->
+  <div id="tab-questions" class="col-md-12 tab-pane active">
+    <div class="card">
+      <div class="header">
+        <h1 class="title text-center"><%= @question.title %></h1>
+        <p class="category text-center">Please share the following link to your students: <%= link_to @tinyURL, @tinyURL %></p>
+      </div><hr>
+
+      <div class="content">
+        <%= render 'answerBox' %>
+      </div>
+    </div><!-- end card -->
+  </div>
+
+<!-- WORD CLOUD -->
+<% if @question.kind == 'Open Question' %>
+  <div id="tab-replies" class="col-md-12 tab-pane">
+    <div class="card">
+      <div class="header">
+        <h1 class="title text-center"><%= @question.title %></h1>
+        <p class="category text-center">Please share the following link to your students: <%= link_to @tinyURL, @tinyURL %></p>
+      </div><hr>
+      <div class="content">
+        <div id="cloud"></div>
+      </div>
+    </div><!-- end card -->
+  </div>
+<% end %>
+
+<!-- BAR CHART -->
+  <div id="tab-stats" class="col-md-12 tab-pane">
+    <div class="card">
+      <div class="header">
+        <h1 class="title text-center"><%= @question.title %></h1>
+        <p class="category text-center">Please share the following link to your students: <%= link_to @tinyURL, @tinyURL %></p>
+      </div><hr>
+
+      <div class="content">
+        <!-- <div id="bar-chart" class="chart"></div> -->
+        <div id="bar-chart"></div>
+      </div>
+    </div><!-- end card -->
+  </div>
+
+<!-- PIE CHART -->
+  <div id="tab-pie"  class="col-md-12 tab-pane">
+    <div class="card">
+      <div class="header">
+        <h1 class="title text-center"><%= @question.title %></h1>
+        <p class="category text-center">Please share the following link to your students: <%= link_to @tinyURL, @tinyURL %></p>
+      </div><hr>
+
+      <div class="content">
+        <!-- <div id="pie-chart" class="chart"></div> -->
+        <div id="pie-chart"></div>
+      </div>
+    </div><!-- end card -->
+  </div>
+</div>

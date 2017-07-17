@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> ClassroomClicker </title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Pacifico' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="wrapper full-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <h1 class="logo text-center">Clicker</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

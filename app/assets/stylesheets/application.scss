@@ -1,0 +1,136 @@
+/*
+ *= require rails_bootstrap_forms
+ *= require jqcloud
+ *= require light-bootstrap-dashboard
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html, html a{
+  -webkit-font-smoothing: antialiased;
+}
+
+.full-wrapper{
+  margin: 0;
+  padding: 0;
+  height:auto;
+  width:100%;
+  background: #3579bf; /* Old browsers */
+  background: -moz-linear-gradient(top, #3579bf 0%, #3340a9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #3579bf 0%,#3340a9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #3579bf 0%,#3340a9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+em{
+  display: inline;
+  float:right;
+  color:#e74c3c;
+}
+
+/* LOGO */
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 36px;
+  padding: 5px 0px;
+  color: #ecf0f1;
+  text-align: center;
+  line-height: 36px;
+}
+
+.logo a.logo {
+  border-bottom: none;
+  box-shadow: none;
+  text-decoration: none;
+}
+
+h1.logo{
+  color: #ecf0f1;
+  margin:1em 0;
+  font-size: 64px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Notification Styles */
+.notice-container{
+ position: absolute;
+  top:0;
+  right:0;
+  width:250px;
+  z-index: 9999;
+  background: rgba(46, 204, 113, 0.9)
+}
+
+.notice-container p {
+  padding: 1.75rem 0;
+  text-align: center;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+
+img.avatar{
+  border:5px solid #fff;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  border-color: #ccc;
+  margin-right:5px;
+}
+
+.navbar-brand{
+  line-height: 40px;
+}
+
+.navbar-left{
+  margin-top:12px;
+}
+
+.red{
+  color :#fff;
+  background-color: #FB404B;
+  opacity: 1
+}
+
+.orange{
+  color :#fff;
+  background-color: #FFA534;
+  opacity: 1
+}
+
+.green{
+  color :#fff;
+  background-color: #87CB16;
+  opacity: 1
+}
+
+.light-blue{
+  color :#fff;
+  background-color: #23CCEF;
+  opacity: 1
+}
+
+.blue{
+  color :#fff;
+  background-color: #447DF7;
+  opacity: 1
+}
+
+#cloud{
+  width:100%;
+  height: 400px;
+}
+
+label.error{
+  color:#e74c3c;
+  padding:5px 0;
+}

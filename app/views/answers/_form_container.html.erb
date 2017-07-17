@@ -1,0 +1,15 @@
+<% if @question.choices.any? || @question.kind == "True/False" %>
+  <div class="row">
+      <% if @question.kind != "True/False" %>
+        <%= render 'choices_form' %>
+      <% else %>
+        <%= render 'binary_choice_form' %>
+      <% end %>
+  </div>
+<% else %>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= render 'form' %>
+    </div>
+  </div>
+<% end %>

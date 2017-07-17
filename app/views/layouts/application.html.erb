@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ClassroomClicker</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "https://cdn.jsdelivr.net/sweetalert2/1.0.4/sweetalert2.css" %>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Pacifico' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "https://cdn.jsdelivr.net/sweetalert2/1.0.4/sweetalert2.min.js" %>
+  <%= javascript_include_tag "https://code.highcharts.com/highcharts.js", "chartkick" %>
+  <%= javascript_include_tag "http://code.highcharts.com/modules/exporting.js" %>
+  <%= javascript_include_tag "http://highcharts.github.io/export-csv/export-csv.js" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= controller_name %> <%= action_name %>">
+
+  <% if notice %>
+    <div class="notice-container">
+      <p class="notice"><%= notice %></p>
+    </div>
+  <% elsif alert %>
+    <div class="notice-container">
+      <p class="alert"><%= alert %></p>
+    </div>
+  <% end %>
+
+<div class="wrapper">
+  <%= render 'nav' %>
+  <!-- Page Content -->
+  <div class="main-panel">
+    <%= render 'topnav' %>
+    <div class="content">
+      <div class="container-fluid">
+          <%= yield %>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- /#page-content-wrapper -->
+  <div id="classroom-modal" class="modal fade" tabindex="-1" role="dialog"></div>
+  <!-- <div id="question-modal" class="modal fade" tabindex="-1" role="dialog"></div> -->
+
+
+</body>
+</html>

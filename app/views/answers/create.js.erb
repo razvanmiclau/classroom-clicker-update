@@ -1,0 +1,3 @@
+$('#new_answer').find('input:text').val('');
+$('#answers').children().remove();
+$("<%= j render @answer %>").hide().appendTo("#answers").fadeIn(1000);

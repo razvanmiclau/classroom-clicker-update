@@ -1,0 +1,38 @@
+<!-- Sidebar Navigation -->
+
+<div class="sidebar" data-color="blue" data-image="https://unsplash.it/354/795/?random">
+
+<!--
+
+    Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+    Tip 2: you can also add an image using data-image tag
+
+-->
+
+  <div class="sidebar-wrapper">
+        <div class="logo">
+            <%= link_to 'Clicker', root_path, class: 'logo' %>
+        </div>
+
+      <% if current_or_guest_user == current_user %>
+        <ul class="nav">
+            <li class="active">
+                <%= link_to(root_path) do %>
+                  <i class="glyphicon glyphicon-home"></i>
+                  <p>Dashboard</p>
+                <% end %>
+
+            </li>
+            <li>
+              <%= link_to(edit_user_registration_path) do %>
+                <i class="glyphicon glyphicon-user"></i>
+                <p>User Profile</p>
+              <% end %>
+            </li>
+
+        </ul>
+      <% end %>
+  </div>
+</div>
+
+<!-- /#sidebar-wrapper -->

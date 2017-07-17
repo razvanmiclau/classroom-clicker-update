@@ -1,0 +1,24 @@
+<% @topic.questions.each do |q| %>
+  <tr>
+    <td><%= q.title %></td>
+    <td><%= q.kind %></td>
+    <td><%= q.created_at.strftime("%d %b. %Y") %></td>
+    <td class="text-center"><%= q.engagement_rate %></td>
+    <td class="td-actions text-right">
+      <% if q.answers.any? %>
+        <%= link_to topic_question_statistics_path(@topic, q), class: 'btn btn-simple', data: { toggle: 'tooltip'}, title: 'Statistics' do %>
+          <i class="glyphicon glyphicon-stats text-info"></i>
+        <% end %>
+      <% end %>
+      <%= link_to [@topic, q], class: 'btn btn-simple', data: { toggle: 'tooltip'}, title: 'See answers' do %>
+          <i class="glyphicon glyphicon-comment text-primary"></i>
+      <% end %>
+      <%= link_to edit_topic_question_path(@topic, q), class: 'btn btn-simple', data: { toggle: 'tooltip'}, title: 'Edit' do %>
+          <i class="glyphicon glyphicon-edit text-warning"></i>
+      <% end %>
+      <%= link_to [@topic, q], class: 'btn btn-danger btn-simple', method: :delete, data: { confirm: 'Are you sure?', toggle: 'tooltip' }, title: 'Delete' do %>
+          <i class="glyphicon glyphicon-trash"></i>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

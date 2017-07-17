@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="header">
+        <h4 class="title"><%= @topic.title %>
+          <%= link_to  new_topic_question_path(@topic), class: 'btn', data: { toggle: 'tooltip'}, title: 'Ask Question' do %>
+              <i class="glyphicon glyphicon-plus text-primary"></i>
+          <% end %>
+        </h4>
+          <p class="category">
+            <!-- <%= link_to 'Add Question', new_topic_question_path(@topic), class: 'btn btn-sm btn-primary' %> -->
+            <!-- <%= link_to 'Back', topics_path, class: 'btn btn-default btn-sm' %> -->
+            A list of questions you've asked during the <span class="text-info"><%= @topic.title %></span> classroom
+          </p>
+      </div>
+
+      <% if @topic.questions.any? %>
+        <div class="content">
+          <%= render 'topics/partials/questions_table' %>
+        </div>
+      <% else %>
+        <div class="content">
+          <h4>No Questions. Please add a new question!</h4>
+        </div>
+      <% end %>
+
+    </div><!-- end card -->
+  </div><!-- end col-md-12 -->
+</div><!-- end row -->

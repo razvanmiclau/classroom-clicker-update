@@ -1,0 +1,26 @@
+<%= bootstrap_form_for [@topic,@question] do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_field :title, placeholder: 'Your Question' %>
+  <%= f.select :kind, @question_types, { label: "Question Type" }, { class: "selectpicker" } %>
+  <div id="custom_fields" style="display: none;">
+    <%= f.fields_for :choices do |choice| %>
+        <%= render 'choice_fields', :f => choice %>
+        <div class="links"><br>
+          <%= link_to_add_association 'add choice', f, :choices, class: 'btn btn-primary btn-xs' %>
+        </div>
+    <% end %>
+  </div>
+  <hr>
+  <%= f.submit 'Create Question', class: 'btn btn-primary' %>
+<% end %>

@@ -1,0 +1,5 @@
+<% @answers.each do |answer| %>
+  <tr>
+    <td class="text-center"><h4>"<%= answer.value %>"</h4><small><%= time_ago_in_words(answer.created_at) %> ago</small></td>
+  </tr>
+<% end %>
