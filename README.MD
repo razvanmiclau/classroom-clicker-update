@@ -4,6 +4,7 @@
 
 * Ruby v2.2.6
 * Rails v4.2.4
+* PostgreSQL
 
 ## Installation Steps
 
@@ -12,7 +13,7 @@
 
 ### Install Project Dependencies with:
 ```
-bundle install
+bundle install / bundle update
 ```
 ### Setup the database tables.
 ```
